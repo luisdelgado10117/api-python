@@ -27,7 +27,7 @@ htmlcov/
 .DS_Store
 Thumbs.db
 
-# Bases de datos locales (si más adelante usas SQLite, por ejemplo)
+# Bases de datos locales (SQLite crea un archivo tasks.db, no se sube a git)
 *.db
 *.sqlite3
 

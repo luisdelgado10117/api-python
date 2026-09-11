@@ -8,13 +8,14 @@ caso real, con la intención de ir creciendo por fases.
 
 **Fase 1 - Completada:** CRUD básico con almacenamiento en memoria.
 
-Próximas fases planeadas:
+**Fase 2 - Completada:**
+- [x] Persistencia con base de datos (SQLite + SQLAlchemy)
+- [x] Validaciones y manejo de errores más robusto
+- [x] Lógica de negocio separada en una clase `TaskManager` (POO)
 
-- [ ] Persistencia con base de datos (SQLite + SQLAlchemy)
-- [ ] Validaciones y manejo de errores más robusto
+Próximas fases planeadas:
 - [ ] Autenticación de usuarios
 - [ ] Documentación automática (Swagger / FastAPI)
-- [ ] Tests con mayor cobertura
 - [ ] Deploy en la nube
 
 ## 📦 Instalación
@@ -37,13 +38,13 @@ La API quedará disponible en `http://127.0.0.1:5000`.
 
 ## 🔌 Endpoints
 
-| Método | Ruta        | Descripción                   |
-| ------ | ----------- | ----------------------------- |
-| GET    | /tasks      | Lista todas las tareas        |
-| GET    | /tasks/{id} | Obtiene una tarea por id      |
-| POST   | /tasks      | Crea una tarea nueva          |
-| PUT    | /tasks/{id} | Actualiza una tarea existente |
-| DELETE | /tasks/{id} | Elimina una tarea             |
+| Método | Ruta          | Descripción                  |
+|-----------------------|-------------------------------|
+| GET    | /tasks        | Lista todas las tareas        |
+| GET    | /tasks/{id}   | Obtiene una tarea por id      |
+| POST   | /tasks        | Crea una tarea nueva          |
+| PUT    | /tasks/{id}   | Actualiza una tarea existente |
+| DELETE | /tasks/{id}   | Elimina una tarea             |
 
 ### Ejemplo: crear una tarea
 
@@ -61,7 +62,14 @@ pytest
 
 ## 🧠 Qué aprendí en esta fase
 
+**Fase 1:**
 - Estructurar un proyecto de Python en módulos y paquetes.
 - Crear una API REST con Flask (rutas, métodos HTTP, respuestas JSON).
 - Programación orientada a objetos básica (clase `Task`).
 - Escribir pruebas automatizadas con `pytest`.
+
+**Fase 2:**
+- Persistencia de datos con SQLite usando SQLAlchemy (ORM).
+- Separar la lógica de negocio de las rutas HTTP (patrón de capas: `TaskManager`).
+- Crear y usar excepciones propias (`TaskNotFoundError`, `InvalidTaskDataError`) para un manejo de errores más claro.
+- Configurar una base de datos distinta para pruebas (en memoria) usando variables de entorno.
